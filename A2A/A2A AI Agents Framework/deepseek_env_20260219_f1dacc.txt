@@ -1,0 +1,15 @@
+# A2A Agent Ports
+TOPSIDES_AGENT_PORT=9001
+FUIMS_AGENT_PORT=9002
+PSV_AGENT_PORT=9003
+SUBSEA_AGENT_PORT=9004
+PIPELINE_AGENT_PORT=9005
+CORROSION_AGENT_PORT=9006
+METHODS_AGENT_PORT=9007
+ORCHESTRATOR_AGENT_PORT=9010
+
+# Agent Host (for Docker, use service names)
+AGENT_HOST=localhost  # or service name in Docker
+
+# Current file hash for cached data (optional)
+CURRENT_FILE_HASH=

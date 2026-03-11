@@ -1,0 +1,160 @@
+# docker-compose.a2a.yml
+version: '3.8'
+
+services:
+  # Base configuration for all agents
+  agent-base: &agent-base
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.a2a
+    networks:
+      - a2a-network
+    environment: &agent-env
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-openai/gpt-4o-mini}
+      - AGENT_HOST=0.0.0.0
+      - LOG_LEVEL=INFO
+
+  # Topsides Agent
+  topsides-agent:
+    <<: *agent-base
+    container_name: a2a-topsides
+    command: python a2a_topsides_agent.py
+    ports:
+      - "9001:9001"
+    environment:
+      <<: *agent-env
+      - TOPSIDES_AGENT_PORT=9001
+
+  # FUIMS Agent
+  fuims-agent:
+    <<: *agent-base
+    container_name: a2a-fuims
+    command: python a2a_fuims_agent.py
+    ports:
+      - "9002:9002"
+    environment:
+      <<: *agent-env
+      - FUIMS_AGENT_PORT=9002
+
+  # PSV Agent
+  psv-agent:
+    <<: *agent-base
+    container_name: a2a-psv
+    command: python a2a_psv_agent.py
+    ports:
+      - "9003:9003"
+    environment:
+      <<: *agent-env
+      - PSV_AGENT_PORT=9003
+
+  # Subsea Agent
+  subsea-agent:
+    <<: *agent-base
+    container_name: a2a-subsea
+    command: python a2a_subsea_agent.py
+    ports:
+      - "9004:9004"
+    environment:
+      <<: *agent-env
+      - SUBSEA_AGENT_PORT=9004
+
+  # Pipeline Agent
+  pipeline-agent:
+    <<: *agent-base
+    container_name: a2a-pipeline
+    command: python a2a_pipeline_agent.py
+    ports:
+      - "9005:9005"
+    environment:
+      <<: *agent-env
+      - PIPELINE_AGENT_PORT=9005
+
+  # Corrosion Agent
+  corrosion-agent:
+    <<: *agent-base
+    container_name: a2a-corrosion
+    command: python a2a_corrosion_agent.py
+    ports:
+      - "9006:9006"
+    environment:
+      <<: *agent-env
+      - CORROSION_AGENT_PORT=9006
+
+  # Methods Agent
+  methods-agent:
+    <<: *agent-base
+    container_name: a2a-methods
+    command: python a2a_methods_agent.py
+    ports:
+      - "9007:9007"
+    environment:
+      <<: *agent-env
+      - METHODS_AGENT_PORT=9007
+
+  # Orchestrator
+  orchestrator:
+    <<: *agent-base
+    container_name: a2a-orchestrator
+    command: python a2a_backlog_orchestrator.py
+    ports:
+      - "9010:9010"
+    environment:
+      <<: *agent-env
+      - ORCHESTRATOR_PORT=9010
+      - TOPSIDES_AGENT_PORT=9001
+      - FUIMS_AGENT_PORT=9002
+      - PSV_AGENT_PORT=9003
+      - SUBSEA_AGENT_PORT=9004
+      - PIPELINE_AGENT_PORT=9005
+      - CORROSION_AGENT_PORT=9006
+      - METHODS_AGENT_PORT=9007
+    depends_on:
+      - topsides-agent
+      - fuims-agent
+      - psv-agent
+      - subsea-agent
+      - pipeline-agent
+      - corrosion-agent
+      - methods-agent
+
+  # Backend (existing FastAPI)
+  backend:
+    build: ./backend
+    container_name: backlog-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-openai/gpt-4o-mini}
+      - AGENT_HOST=backend
+      - ORCHESTRATOR_URL=http://orchestrator:9010
+    volumes:
+      - ./backend:/app
+      - backlog-data:/app/data
+    depends_on:
+      - orchestrator
+    networks:
+      - a2a-network
+
+  # Frontend (existing React)
+  frontend:
+    build: ./frontend
+    container_name: backlog-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - a2a-network
+
+volumes:
+  backlog-data:
+
+networks:
+  a2a-network:
+    driver: bridge

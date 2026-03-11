@@ -1,0 +1,16 @@
+{
+  "jsonrpc": "2.0",
+  "method": "tasks/send",
+  "params": {
+    "id": "task-123",
+    "message": {
+      "role": "user",
+      "parts": [
+        {
+          "type": "text",
+          "text": "What are the high-risk topsides items?"
+        }
+      ]
+    }
+  }
+}

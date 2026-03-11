@@ -1,0 +1,1227 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green128\blue170;\red255\green255\blue255;\red13\green18\blue32;
+\red254\green239\blue239;\red237\green242\blue247;}
+{\*\expandedcolortbl;;\cssrgb\c-17070\c57420\c72257;\cssrgb\c100000\c100000\c100000;\cssrgb\c5718\c9004\c16880;
+\cssrgb\c99684\c94959\c94959;\cssrgb\c94447\c96050\c97652;}
+\margl1440\margr1440\vieww33400\viewh21000\viewkind0
+\deftab720
+\pard\pardeftab720\qc\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 0:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 In this lesson, you're going to bring together the healthcare research agent,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 insurance policy agent, and healthcare provider agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 using the open-source BeeAI Framework\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:08\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 created by IBM research.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:10\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This framework dynamically calls agents when needed, creating a multi-agent system.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:15\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Each agent is built with different underlying technologies.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:19\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 But since you've already wrapped them as A2A servers,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:21\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 you can orchestrate them as part of the same team.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 That way they communicate using the same protocol.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Kind of akin to speaking the same\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:29\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 language, even if they have different accents.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Let's go. The open source BeeAI framework\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:33\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 is a developer tool for building production-ready\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:36\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 AI agents with an emphasis on agent reliability.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:40\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 BeeAI goes beyond simple prompting\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:42\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 by providing a lightweight yet powerful approach to reliable agent development.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:47\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 With built-in constraint enforcement and rule-based governance\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:50\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 that preserves reasoning abilities while ensuring predictable behavior.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:54\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's not enough to create an agent. It's important that you are\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:57\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 confident that the agent won't act outside\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 0:59\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 of the constraints that you set for it.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:01\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 As we walk through the notebook, we'll\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb5 \strokec4 learn about the features of the BeeAI Framework,\
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 like its ability to enforce rules that drive agent behavior,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Event Driven Middleware, pluggable observability,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:13\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 built-in memory management, and MCP and A2A nativeness.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:17\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Let's get started. We'll start by importing your dependencies.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:21\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 You'll see we're importing asyncio for handling asynchronous operations\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:25\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 in a notebook environment, the standard os module,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:28\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and some display utilities from IPython.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We're also importing a helper function called authenticate from our helpers module,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 so we can use VertexAI as\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 our inference provider for the orchestrator agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:40\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Next, we need to ensure that all of our individual agents\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:43\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 that we created in the previous lessons\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:45\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 are running in their own terminal,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:47\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 so that when we build the orchestrator agent,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:49\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 they can be found and responsive.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:52\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Let's start the policy agent that you built in lesson four.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:55\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's already running because it's been ran in a previous lesson.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 1:58\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Then we'll start the research agent from lesson six.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And finally, the provider agent from lesson eight.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 All right, now let's get to the exciting part.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 I'm going to create what's called a requirement agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:12\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to dynamically orchestrate and call the other agents when needed.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:16\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's called the requirement agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:18\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 because you can ensure that it\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:20\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 enforces certain rules by setting conditional requirements.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:22\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 But you'll learn more about that in a few minutes.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 For now, let's ensure that you have the imports installed\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:28\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and helper function for observability.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:30\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 I use the beeai_framework adapters to import the needed modules,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:34\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which make it simple to wrap\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 a BeeAI agent as an A2A server.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:37\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The VertexAIChatModel to use vertexai as the\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:40\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 inference provider for the main orchestrator agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:43\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 BeeAI also has 15 plus built-in providers\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and can be easily extended to add custom inference providers.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:50\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And finally, the remaining modules that add memory, ConditionalRequirement,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:54\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the HandoffTool and the ThinkTool, which we'll cover as we implement.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 2:59\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now we load the environment variables and authenticate to Google Cloud,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 since we're using Vertex as the LLM inference provider.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Then we set up the connection details and get the ports\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 for where each of the agents is running.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:11\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And I define a port for the new healthcare agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:14\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 that you'll be building in this lesson using the RequirementAgent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:18\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Next, I use the abstraction in the BeeAI framework\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:21\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to make an A2A agent instance of the running servers.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:25\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 First, I create the A2A object pointing to that agent's URL.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:29\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This acts as the A2A client\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 that will take care of forwarding the request\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:34\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to the server agent through A2A.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Then I give it UnconstrainedMemory\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 so it can manage conversation history. The BeeAI framework\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:41\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 also has other built-in memory optimization strategies,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 like sliding window, which keeps only the most recent K entries,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:47\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 token memory, which manages token usage to stay within model context limits,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:52\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and summarize memory, which maintains a single summarization of the conversation.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 3:56\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Determining your memory strategy makes a large impact on agent performance\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:01\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and is something that you should\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 experiment with as you build agentic systems.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:04\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Finally, I call check_agent_exists method,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:08\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which reaches out to the agent server and fetches its AgentCard,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:11\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which is like the agent's metadata profile.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:14\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It includes the agent's name, description, and capabilities.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:18\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 See how after I run it,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:20\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 it confirms that the agent has been initialized?\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:22\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The check_agent_exists method validated that each server is running\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and retrieve their AgentCard information.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:29\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This AgentCard data will be crucial in the next session\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:32\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 when I set up an orchestrator. It tells\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the requirement agent what each specialized agent can do.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now let's do the same for the research_agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:41\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And finally, for the provider agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now all these agents are ready\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to be called by the Orchestrator agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:48\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's time to create the brain of the operation, the Orchestrator agent,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:52\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which I'm calling the healthcare agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:55\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 But before I dive into the code,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:56\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 let's talk about what makes the agent special\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 4:59\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and why it's important for production AI systems.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Traditional AI agents exhibit unpredictable behavior.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 You might have an agent that works perfectly in testing,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:08\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 but in production it starts skipping critical steps,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:11\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 using wrong tools, or terminating before completing its task.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:15\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Different language models also produce\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:18\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 wildly different execution patterns for the same task.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:21\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 What works with one model might completely fail with another.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This unpredictability is actually one of the biggest barriers\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to deploying AI agents in real world applications\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:30\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 where reliability matters.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:33\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The Requirement Agent solves this through declarative rule-based constraints\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:36\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 called Conditional Requirements.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:39\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Instead of hoping your agent will do the right thing\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:42\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and put directions in your system prompt,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which is not enforceable,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 you can explicitly declare rules\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:48\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 about when and how tools should be used.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:51\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The framework then enforces these rules\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:54\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 regardless of which language model you're using underneath.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 5:56\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It works by checking the conditional rules before each LLM invocation.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:01\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Only the tools whose Conditional Requirements\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 are satisfied at that point of time\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:05\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 are exposed to the LLM as callable options.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:08\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 For example, if an agent has 10 tools,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:11\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 but in the third turn of the conversation,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:13\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 only four of the 10 tools should be used\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:16\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 according to the logic that you set.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:17\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 in the conditional requirements,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:19\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 then only the four tools are exposed\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:21\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to the LLM as options to call.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This enforces the rules at the framework level\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 rather than suggesting them in the system prompt, which is unenforceable.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Limits unnecessary context bloat,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:33\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which affects performance and production costs,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:36\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and reduces the necessary reasoning ability of the model\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:39\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to choose the correct tool at the correct time.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:42\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now let's configure the Requirement Agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 First, we give it a name and a description.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:47\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Healthcare agent is our concierge that's customized to your policy.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:51\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This metadata will be important when we\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:54\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 expose this agent as an A2A server itself.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:57\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Next, the LLM.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 6:59\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We're using Vertex AI's gemini-2.5-flash model.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Notice we're enabling parallel tool calls.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:05\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This means the agent can call multiple specialized agents simultaneously if needed.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 For example, if a user asks about both insurance coverage and\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:13\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 a nearby provider, it can query both agents at the same time.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:17\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now let's look at the tools array.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:19\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We have four tools, the think tool. This is a reasoning tool.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:23\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 I can change the conditional requirements on\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:26\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the think tool to enable different reasoning patterns.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:28\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 For instance, I can create a\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 react or reasoning and then acting pattern\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:33\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 by forcing the think tool to be\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 run in between every other tool call.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 or a planning pattern by forcing the ThinkTool at just step one.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:42\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 I also have three HandoffTools.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 One for each specialized agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The HandoffTool is similar to a normal tool,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:49\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 except it doesn't just execute the tool as an isolated function\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:52\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and return the result to the main agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:54\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It also passes the state and context off to\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 7:57\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the other agent the task is being handed off to.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The abstraction makes it easy to\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 call agents as tools without needing to\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:04\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 implement the handoff logic yourself.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Notice that we're using the agent_card.description\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 from each A2A agent as the tool description.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:12\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Remember how we fetched the agent cards earlier with check_agent_exists?\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:16\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 That's why. The descriptions tell the requirement agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:19\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 exactly what each specialized agent can do.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:22\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Next, we get to the differentiator for the BeeAI framework.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:25\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The ConditionalRequirement.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Because we want the LLM's reasoning ability to\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:30\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 dynamically select the correct agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:33\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to hand off tasks to at the correct time.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We won't force a certain order\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:37\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 or necessarily even which agent should be called.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:39\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 But we can put some rules around how\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:41\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the agent should behave if they are called.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:43\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 In this case, we're only setting one ConditionalRequirement,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 but I'll speak about a couple others.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:48\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We want to force the agent to think at the first turn\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:51\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to do some planning. And then after every additional tool call,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 8:55\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 but not consecutively. This enforces a thinking and then a ReAct pattern.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We can also add additional conditional requirements\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 on our agents themselves that are being handed off to.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:07\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 In this case it's commented out, but you can add conditional requirements\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:11\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 on each of the agent tools that say max consecutive allowed,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:15\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 minimum consecutive allowed, or even\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:18\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which agent should be called at which step of the agent process.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:22\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 many built-in parameters to choose from\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 when setting your ConditionalRequirement logic,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:26\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 such as minimum or maximum invocations of a tool allowed,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:29\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 forcing certain tools only before or after other tools have been called,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:34\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 or even your own custom conditions.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:36\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 You can see the entire parameter reference\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and how to build custom ones in\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:39\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the resources at the bottom of the notebook.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:42\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now we can set our agent's role.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which is a Healthcare Concierge\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and the instructions that it should follow.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:48\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Note that we don't need to repeat\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:50\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the rules that we put in the ConditionalRequirement\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:52\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 in natural language in the system prompt\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:54\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 because the conditional requirements give us an enforceable way\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 9:58\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to ensure that the agent follows directions,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 rather than a suggestion in the system prompt.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Instead, we can keep our system prompt more concise and clean\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 without overburdening the LLM's reasoning abilities.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:10\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Okay, now it's time to run the full workflow.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:12\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 In the response variable, let's wait\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:15\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 until the agent runs and ask it,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:17\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 I'm based in Austin, Texas.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:19\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 How do I get the mental health therapy near me\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:22\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and what does my insurance cover?\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now because we want to see what's happening under the hood,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 we can use the BeeAI framework's middleware\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:30\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to view the agent trace as a form of observability.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:33\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The middleware can also be used as a\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 way to hook into the agent emitted events,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:37\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and inject things like content safety filters or prompt injection detection.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:41\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 You can check out more examples on\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:43\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 how to use middleware in the documentation.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:45\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 So finally, let's display the agent's last response,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:48\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which is its final answer.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:50\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We can see that the agent has started to work\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:52\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and it's going through each of those ConditionalRequirement\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:55\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to check for what tools it's allowed to call.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 10:58\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Then it calls the VertexAIChatModel.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's decided to call a ThinkTool\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 because we've forced that tool at step one.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:04\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And it will go through the process over and over again\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:07\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 until it has a final answer.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:10\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's produced its final answer.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:12\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 So we can see that it gave\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:13\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 us a summary of mental health therapy options\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:15\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 near you and the insurance coverage.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:18\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 So it pulled from the provider agent,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:20\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 which provider that we can see within our insurance plan.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And then from the insurance policy agent,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:26\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 some information about outpatient services, inpatient services,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:30\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and important notes on our individual policy.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:32\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Notice how it didn't call information from the research agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:36\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 That's because we didn't explicitly say that\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the research agent needed to be called\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:40\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and the orchestrator didn't deem that it\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:42\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 needed to be called for this circumstance.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:44\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 If we wanted to enforce the research agent also be called,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:47\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 we could add a conditional requirement that had a minimum invocation\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:51\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 or a maximum invocation for how many\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:53\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 times the research agent could be called.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:55\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 In order to be able to run the healthcare\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 11:57\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 agent as an A2A agent on its own server,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 we need to write the code to a Python file.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This code helps us do that.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 It's the same logic that we just created above,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:06\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 but formatted as classes and functions.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Rather than being ran in a Jupyter notebook cell.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:24\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now that we have the healthcare agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:26\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 code written out to its own file,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:28\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 the only change we need to make\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:29\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to run the agent as an A2A agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 is to add a single A2A server registration statement.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:35\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 The BeeAI framework makes it easy\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to turn any agent into an A2A agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:40\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 by providing its A2A server abstraction.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:43\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We set our config by assigning the port, protocol, and host.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:48\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We add memory, which is the session\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:50\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 memory, rather than the individual agent context memory.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:53\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and then we register the agent and serve it.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 12:56\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We're appending this to the same a2a_healthcare_agent.py file.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:00\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 But I wanted to separate it out for\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:02\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 you to see just how simple the actual\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:04\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 process of creating the A2A server is.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:07\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now let's start the BeeAI healthcare agent as\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:09\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 its own A2A server in a new terminal.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:12\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 This demonstrates that the A2A agent that calls other A2A agents\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:16\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 can itself be exposed as an A2A agent.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:20\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Let's type uv run\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:23\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 a2a_healthcare_agent.py\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:29\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to start the server.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now we can see that the server has started\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:34\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and all of the other agents that are\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:36\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 being used as handoff tools have been initialized.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Now let's create the client that calls the healthcare agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:41\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 running on the A2A server. We use our A2AAgent wrapper\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:46\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and point it to the URL that the agent is running on.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:49\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 Then we add memory for the agent itself.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:51\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We capture the agent run response in the responses variable,\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:55\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and just like we did before, we ask the same question\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 13:58\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and display the trajectory using middleware for observability\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:03\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 and voila. The A2A agent client is invoking\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:07\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 an A2A agent in a server that calls other A2A agents\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:10\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 on separate servers. And there we have it.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:14\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 In this lesson, we used the\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:16\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 open source BeeAI framework by IBM Research\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:19\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 to create an A2A agent\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:21\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 that dynamically calls other A2A agents written using different frameworks.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:27\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 And then we made the main A2A agent an A2A server itself.\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:31\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 We hope that you saw the power of conditional requirements\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:34\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 \strokec4 that make it easy to set rule-based constraints on agent behavior\cb1 \
+\pard\pardeftab720\qc\partightenfactor0
+\cf2 \cb3 \strokec2 14:38\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb6 \strokec4 and ensure that your agent acts within their allowed scope every time.\
+}

@@ -1,0 +1,120 @@
+0:00
+Let's now expand the agent collection by adding in another agent.
+0:03
+This time, you'll use Google's Agent Development Kit, ADK,
+0:07
+and Gemini 3 Pro on Vertex AI.
+0:10
+This agent will perform research using Google search
+0:12
+about a user's health conditions and provide the results.
+0:16
+ADK and several other frameworks have built-in integrations with A2A,
+0:20
+which makes it much easier to make agents A2A compliant.
+0:23
+So that's what we'll be using
+0:25
+for this agent. Let's get to it.
+0:26
+Let's write the code for the research agent.
+0:29
+This agent will run Google search
+0:32
+and present research about health conditions to the end user.
+0:34
+I'm saving this code as a Python file again,
+0:37
+this time called a2a_research_agent.py.
+0:40
+I'll import some libraries, including
+0:43
+Agent Development Kit and the to_a2a method.
+0:47
+I'll disable warnings because this library tends to be pretty noisy
+0:50
+when using A2A as it's experimental.
+0:52
+I'll load in environment variables and authenticate to Google Cloud.
+0:55
+Next, I'll load the host and port from the environment.
+0:58
+Note, the port is going to
+1:00
+be different from the insurance policy agent
+1:02
+because they need to be running simultaneously on the same system.
+1:05
+Now, I'll define the ADK agent.
+1:08
+In this case, it'll be an LLMAgent,
+1:11
+which I'll call research agent.
+1:14
+I'll provide the model ID, gemini-3-pro-preview,
+1:17
+and give it the name HealthResearchAgent.
+1:20
+I'll add some tools.
+1:22
+In this case, we will use Gemini's built-in Google
+1:24
+search tool within ADK to help with the research.
+1:26
+I'll add a description of this agent.
+1:28
+provides healthcare information about symptoms, health conditions, treatments, and procedures.
+1:32
+using up-to-date web resources.
+1:35
+And I'll give the system instructions, telling it to research health conditions.
+1:39
+Next, I'll create the main method.
+1:41
+All you need to do to make this agent A2A-compatible
+1:44
+is call the to_a2a method.
+1:47
+Pass in the agent, the host, and port,
+1:50
+and then pass this a2a_app to uvicorn run
+1:53
+to run it. You don't have to create agent cards or agent
+1:56
+executors, because ADK has already written the code for you.
+2:00
+ADK uses the agent name, tools, and description
+2:03
+to fill out the agent card and skills.
+2:05
+Now, I'm going to go ahead
+2:06
+and run this code in terminal two.
+2:08
+So, I'll type in uv run a2a_research_agent.py.
+2:13
+Now that you have this agent running, you have a
+2:15
+lot of options for what you can do with it.
+2:17
+You can reuse the client that we created in the previous lesson.
+2:20
+It's already set up to work with this type of agent.
+2:23
+Just use a different query and a different host and port,
+2:27
+and you can access it the exact same way as before.
+2:29
+Note that this agent will respond with
+2:31
+a task instead of an immediate message,
+2:33
+so that client will handle it slightly
+2:34
+differently than the previous agent we created.
+2:36
+Or you can do what we'll do in the next lesson,
+2:39
+where we'll combine this agent with the previous agent
+2:41
+to create a sequential workflow.

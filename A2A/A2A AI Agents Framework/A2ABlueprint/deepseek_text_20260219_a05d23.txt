@@ -1,0 +1,15 @@
+POST /api/v1/chat
+Content-Type: application/json
+
+{
+  "message": "What are high-risk topsides and overdue PSV valves?",
+  "session_id": "optional-session-id"
+}
+
+Response:
+{
+  "response": "Synthesized answer from multiple agents...",
+  "agents_used": ["topsides", "psv"],
+  "session_id": "session-id",
+  "timestamp": "2026-02-19T..."
+}

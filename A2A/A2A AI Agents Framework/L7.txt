@@ -1,0 +1,120 @@
+0:00
+We now have two A2A servers,
+0:02
+an insurance policy agent and a health research agent.
+0:05
+Let's have them work on a task together.
+0:07
+You'll use a sequential agent from ADK,
+0:09
+which will handle the A2A communications
+0:12
+and call the two agents in sequence,
+0:14
+feeding the results from one agent into the next using
+0:17
+A2A clients. Let's dive in.
+0:19
+Now we're going to create a sequential workflow chain agent with ADK
+0:23
+using the previous agents we've already created.
+0:26
+First, I'll make sure that both
+0:27
+of the previous agents are still running.
+0:29
+You can see in terminal one,
+0:32
+I have the insurance policy agent still running.
+0:35
+Now, let's open terminal 2.
+0:38
+And I can see that the
+0:40
+health research agent is also still running.
+0:41
+If not, be sure to run the uv run
+0:44
+command again as you did in the previous lessons.
+0:46
+You can find the instructions in your notebook.
+0:49
+Then, I'll import the libraries,
+0:51
+including the RemoteA2Aagent class from ADK.
+0:55
+and the SequentialAgent class.
+0:58
+and InMemoryRunner.
+1:00
+And I'll disable warnings as before.
+1:02
+Then I'll load in the environment variables.
+1:04
+Note, this time, I need to pull in the host
+1:08
+and the ports for both the policy agent and research agent.
+1:11
+Now, to connect to the A2A agents,
+1:14
+you just need to instantiate the class RemoteA2Aagent,
+1:17
+give the agent a name,
+1:19
+and pass in the URL for
+1:21
+where the agent card will be hosted.
+1:23
+I'll do this for both the policy_agent
+1:26
+and the health_research_agent.
+1:29
+This RemoteA2Aagent class
+1:32
+acts as your A2A client.
+1:34
+and it handles all of the boilerplate code
+1:36
+for interacting with an A2A agent,
+1:38
+like the HTTP connections,
+1:40
+tasks, and messages.
+1:42
+Next, I'll create an ADK SequentialAgent,
+1:45
+which will have the health_research_agent,
+1:48
+and policy_agent as sub_agents.
+1:51
+Note, because this is a SequentialAgent,
+1:54
+the order of these agents listed under sub_agents does matter.
+1:58
+It determines which agent is called first.
+2:00
+This is different if you're using an LLMAgent,
+2:03
+which has the model decide which agent to call when.
+2:06
+Now, I can send a single request to the sequential agent
+2:10
+and it should give me a response from both agents.
+2:13
+I'll create an InMemoryRunner to store the agent state.
+2:16
+and then run it with the prompt.
+2:19
+and print out the final response.
+2:22
+And here we can see responses from the health research agent,
+2:29
+and our policy agent, tailored to our specific insurance policy.
+2:33
+And there you go. You've successfully
+2:36
+built a chained multi-agent system using A2A.
+2:39
+Next up, we'll build yet another agent
+2:42
+using A2A and MCP.

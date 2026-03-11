@@ -1,0 +1,76 @@
+# ── Environment & Secrets ────────────────────────────────────────────────────
+.env
+*.env
+backend/.env
+!backend/.env.example
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+backend/venv/
+.pytest_cache/
+backend/.pytest_cache/
+*.egg-info/
+dist-python/
+htmlcov/
+.coverage
+
+# ── Node.js ──────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Build Outputs ────────────────────────────────────────────────────────────
+dist/
+
+# ── Databases & Caches ──────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+backlog_cache.db
+backend/backlog_cache.db
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+backend.log
+frontend.log
+agent_traces.log
+backend/agent_traces.log
+
+# ── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Large / non-essential files ──────────────────────────────────────────────
+*.pdf
+*.xlsm
+*.xlsx
+*.xls
+!sample_backlog_data.xlsx
+ScienceDirect_articles_*/
+*.md.bak
+chat_history_*.md
+chat_export_*.md
+17112025_Chat.md
+Weaviate-Context-Engineering-ebook.pdf
+PAZ*.xlsm
+InspectionPrograms_2026/
+ChatInterfaceImprovements/
+
+# ── Jupyter Notebooks (A2A learning materials) ──────────────────────────────
+A2A/**/*.ipynb
+A2A/**/*.pdf
+C1M2_Lab_1_deep_research_p1.ipynb
+
+# ── Backup files ─────────────────────────────────────────────────────────────
+*.BACKUP_*

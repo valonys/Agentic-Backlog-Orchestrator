@@ -1,0 +1,266 @@
+0:00
+We mentioned earlier in the course
+0:01
+how A2A and MCP are complementary protocols.
+0:03
+So let's actually build an agent that uses both.
+0:06
+For this example, you'll create
+0:08
+a healthcare provider recommendation agent
+0:11
+using LangGraph and OpenAI GPT OSS on Vertex AI.
+0:15
+You'll build an MCP server
+0:17
+that provides a list of fictional doctors with their locations and specialties.
+0:21
+Then you'll connect it to the agent,
+0:23
+which you'll finally expose as an A2A server. Let's go.
+0:27
+Now, you're going to create an A2A agent which also uses MCP.
+0:32
+And this agent is being
+0:34
+built using the popular AI agent framework LangGraph.
+0:37
+So first, we need to create an MCP server.
+0:40
+We're going to be creating this MCP server using the FastMCP library.
+0:44
+So I'll again use the writefile Jupyter magic
+0:47
+to define this as a separate file called mcpserver.py
+0:50
+Once again, we'll import some libraries including FastMCP.
+0:55
+Then I'll create the FastMCP server,
+0:57
+which I'll call doctorserver.
+0:59
+This agent is going to be searching for healthcare providers
+1:03
+using a specific MCP tool.
+1:05
+I'll load in a JSON file that
+1:07
+I have stored in the data directory.
+1:09
+And I'll load it in as a list called doctors.
+1:12
+Then I'll use the MCP tool
+1:15
+decorator to make this next method we're
+1:17
+going to create into an MCP tool.
+1:19
+This method is called list_doctors.
+1:22
+So I'll have it take in
+1:23
+a US state name and a city.
+1:26
+And it'll return a list of dictionaries.
+1:28
+And remember to put in a detailed docstring,
+1:31
+because this will be used by the LLM
+1:34
+to decide which functions to call and when.
+1:39
+This method will first do some input validation
+1:41
+to make sure at least a city or a state is provided.
+1:44
+We'll normalize the city and state to do case-insensitive matching.
+1:49
+So now, we'll filter down the list by state and city.
+1:52
+using a list comprehension.
+1:54
+FastMCP will automatically convert this list of dictionaries
+1:58
+into JSON when sending to the model.
+2:00
+Now, I'll kick off the server with dunder main
+2:02
+and run the MCP server over standard IO.
+2:04
+This means the server will be running locally.
+2:07
+Now that you have the MCP server set up,
+2:10
+you'll now build the health provider agent using LangChain and LangGraph.
+2:14
+First, I'll import all the libraries, including LangChain.
+2:19
+I'll authenticate to Google Cloud.
+2:22
+In order to use the LangChain OpenAI connector with Vertex AI,
+2:25
+you'll need to override the default URL.
+2:28
+So I'll use this custom URL with the Vertex AI OpenAI endpoint.
+2:33
+I'll use nest_asyncio to enable async
+2:36
+code to run in a Jupyter environment.
+2:38
+Now I'll define the MultiServerMCPClient for LangGraph.
+2:43
+I'll call it find_healthcare_providers, and run
+2:46
+the MCP server over standard IO,
+2:49
+using uv run mcpserver.py.
+2:52
+Just to clarify in this case, the MCP server
+2:55
+is running as a subprocess of the Python script,
+2:58
+not as a separate HTTP server.
+3:00
+Then, I'll convert the MCP client into a LangGraph tool.
+3:05
+Now, I'll create the agent using the LangChain create_agent method.
+3:10
+I'll use the ChatOpenAI class for the model.
+3:12
+The name will be OpenAI GPT
+3:15
+OSS 20 billion model as a service.
+3:18
+I'll add the Google Cloud credentials as the API key.
+3:22
+and I'll use the Vertex AI URL as the base_url.
+3:25
+I'll add in the tools, give this agent a name,
+3:29
+and add in the system_prompt, which will task the agent
+3:32
+with using the MCP tool to find healthcare providers
+3:34
+based on the user's query. Now, in my
+3:37
+experimentation, this model likes to try and include real doctors
+3:40
+instead of the fake ones in the
+3:41
+tool. So I need to prompt it
+3:43
+to just return providers from the tool.
+3:46
+Now, I'll test this agent with a user prompt.
+3:48
+In this case, I'll ask this agent for any psychiatrists
+3:51
+in Austin, Texas. I'll print out the last message as markdown.
+3:56
+And it looks like Dr. Coffey is available in Austin for psychiatry.
+4:01
+So, the LangGraph agent works.
+4:03
+Now, let's make it A2A compliant.
+4:05
+LangGraph serving, LangSmith, has a built-in A2A integration,
+4:09
+but it works very differently than the
+4:11
+other integrations in this lesson. So for consistency,
+4:14
+I'll follow a similar process to the
+4:15
+first agent created using the A2A SDK.
+4:18
+This is also what you would do for any agent framework
+4:20
+which doesn't yet have an A2A integration.
+4:22
+We're going to again use the writefile
+4:24
+Jupyter magic to add this to agents.py.
+4:27
+In this case, we'll be appending it to the end
+4:30
+because we already have the Claude agent from earlier in agents.py
+4:35
+First, we'll import some libraries,
+4:38
+including everything from LangChain and our helpers.
+4:41
+And I'll create a container class for the LangGraph agent
+4:44
+called ProviderAgent to make it easier to abstract away the details.
+4:48
+We have an init method to initialize the agent
+4:51
+and set all the important fields.
+4:53
+Then we also have an initialize method.
+4:56
+Because the MCP client connection is asynchronous,
+4:59
+you need to use a helper initialize method
+5:01
+to avoid race conditions when initializing.
+5:04
+This is where we actually create the agent.
+5:07
+Then we'll put all of the
+5:09
+agent communication logic within the answer_query method.
+5:12
+It'll take in the prompt and it'll
+5:14
+send out a response as a string.
+5:19
+Now, I'll test this class we just created
+5:21
+to make sure it works as we expect.
+5:23
+Okay? And it's working just like we expect.
+5:27
+Now, I'll wrap up this provider agent in an A2A agent executor.
+5:31
+We'll save it as a file called a2a_provider_agent.py
+5:35
+We'll load in the libraries, create our executor class.
+5:39
+In this case, I'll do a lazy initialization of the agent.
+5:44
+In the execute method, I'll make sure that the agent is initialized,
+5:49
+and then I'll get the user input just like before,
+5:51
+pass the prompt into the answer_query method.
+5:53
+Then I'll enqueue the agent message to the event_queue.
+5:57
+And I'll pass on the cancel method just like before.
+6:00
+Now, let's look at the main method.
+6:03
+I'll load in environment variables, define the HOST and PORT,
+6:07
+create the AgentSkill, which will basically just be describing the MCP tool.
+6:11
+Then load up the AgentCard with all the details.
+6:14
+I'll create a request handler
+6:17
+and an A2A Starlette server and run it with uvicorn,
+6:21
+and we'll have dunder main to actually run all of this code.
+6:25
+Now, I'll run it in terminal 3.
+6:32
+It looks like it's up and running.
+6:34
+Now, in the next lesson, we'll connect to this agent
+6:37
+with another example of an A2A client
+6:39
+using Microsoft agent framework.
+6:41
+Then after that, we'll combine this agent

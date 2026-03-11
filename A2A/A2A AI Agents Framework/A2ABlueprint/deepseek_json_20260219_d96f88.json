@@ -1,0 +1,21 @@
+{
+  "name": "TopsidesEngineerAgent",
+  "description": "AI-powered topsides engineering analyst for inspection backlog",
+  "url": "http://localhost:9001/",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false
+  },
+  "skills": [
+    {
+      "id": "topsides_analysis",
+      "name": "Topsides Engineering Analysis",
+      "description": "Analyzes topsides equipment including pressure vessels, structures, and piping",
+      "tags": ["backlog", "topsides", "engineering"],
+      "examples": [
+        "What are the high-risk topsides items?",
+        "Show me overdue pressure vessels"
+      ]
+    }
+  ]
+}
