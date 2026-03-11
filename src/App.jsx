@@ -53,7 +53,7 @@ import EquipmentDetail from './components/EquipmentDetail';
 import ChatInterface from './components/ChatInterface';
 import DashboardEnhancements, { getISOWeekNumber, getISOWeeksInYear } from './components/DashboardEnhancements';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
 const FONT_FAMILY = '"Tw Cen MT", "Tw Cen MT Condensed", Arial, sans-serif';
 const SITES = ['GIR', 'DAL', 'PAZ', 'CLV'];
 const PRIMARY_TABS = ['Pressure Safety Device', 'Pressure Vessel (VII)', 'FU Items'];

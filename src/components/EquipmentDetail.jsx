@@ -32,7 +32,7 @@ import {
   Edit as EditIcon
 } from '@mui/icons-material';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
 
 function EquipmentDetail({ open, tagId, onClose, onSave }) {
   const [equipment, setEquipment] = useState(null);

@@ -2,7 +2,23 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "functions": {
+    "api/index.py": {
+      "runtime": "@vercel/python@4.5.0",
+      "maxDuration": 60
+    }
+  },
   "rewrites": [
+    { "source": "/process-backlog", "destination": "/api/index.py" },
+    { "source": "/agentic-report", "destination": "/api/index.py" },
+    { "source": "/agentic-chat", "destination": "/api/index.py" },
+    { "source": "/cache/:path*", "destination": "/api/index.py" },
+    { "source": "/equipment/:path*", "destination": "/api/index.py" },
+    { "source": "/items/:path*", "destination": "/api/index.py" },
+    { "source": "/a2a/:path*", "destination": "/api/index.py" },
+    { "source": "/feedback/:path*", "destination": "/api/index.py" },
+    { "source": "/chat/:path*", "destination": "/api/index.py" },
+    { "source": "/health", "destination": "/api/index.py" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

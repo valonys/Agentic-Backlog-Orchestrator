@@ -24,7 +24,7 @@ import {
   Close as CloseIcon
 } from '@mui/icons-material';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '');
 
 function Sidebar({ open, onClose, onFileSelect, onProcess, onLoadCache, database, loading, success, error, onReset }) {
   const handleFileChange = (e) => {

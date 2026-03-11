@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: agentic-backlog-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    region: oregon
+    plan: free
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openrouter/minimax/minimax-m2.5
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: LLM_TEMPERATURE
+        value: "0.2"
+      - key: LLM_MAX_TOKENS
+        value: "3000"
+      - key: LOG_LEVEL
+        value: INFO
+      - key: BACKEND_PORT
+        value: "8000"
+    healthCheckPath: /
