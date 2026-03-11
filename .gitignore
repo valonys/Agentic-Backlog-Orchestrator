@@ -74,3 +74,4 @@ C1M2_Lab_1_deep_research_p1.ipynb
 
 # ── Backup files ─────────────────────────────────────────────────────────────
 *.BACKUP_*
+.vercel
