@@ -1067,4 +1067,4 @@ rm backend/backlog_cache.db
 
 ---
 
-**Powered by SPT/INSP/MET | Contact: Ataliba Miguel**
+**Powered by FO/STP/INS/MET | Contact: Ataliba Miguel**

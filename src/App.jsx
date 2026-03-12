@@ -1236,7 +1236,7 @@ function App() {
             fontSize: '0.85rem',
           }}
         >
-          Powered by SPT/INSP/MET &nbsp;|&nbsp; Contact: Ataliba Miguel
+          Powered by FO/STP/INS/MET &nbsp;|&nbsp; Contact: Ataliba Miguel
         </Typography>
       </Box>
     </Box>
