@@ -1233,7 +1233,7 @@ function App() {
             fontFamily: '"Tw Cen MT", "Tw Cen MT Condensed", Arial, sans-serif',
             color: 'rgba(255,255,255,0.7)',
             letterSpacing: '0.5px',
-            fontSize: '0.72rem',
+            fontSize: '0.85rem',
           }}
         >
           Powered by SPT/INSP/MET &nbsp;|&nbsp; Contact: Ataliba Miguel
