@@ -1060,6 +1060,11 @@ rm backend/backlog_cache.db
 
 ---
 
-**Last Updated**: February 19, 2025
+**Last Updated**: March 12, 2026
 **Project Version**: 2.0.0
 **Agentic System**: CrewAI 1.9.3 with async/hierarchical processes
+**Author**: Ataliba Miguel
+
+---
+
+**Powered by SPT/INSP/MET | Contact: Ataliba Miguel**

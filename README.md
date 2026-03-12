@@ -416,4 +416,8 @@ For issues or questions:
 
 ---
 
-**Built with ❤️ for Offshore Operations Teams**
+**Built with care for Offshore Operations Teams**
+
+---
+
+**Powered by SPT/INSP/MET | Contact: Ataliba Miguel**

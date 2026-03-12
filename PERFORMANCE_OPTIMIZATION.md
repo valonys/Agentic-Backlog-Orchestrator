@@ -46,7 +46,7 @@ OPENROUTER_MODEL=openrouter/anthropic/claude-haiku-3-5  # ~2-4 seconds, high qua
 **Trade-offs**:
 - DeepSeek: Fastest, cheapest ($0.14/M tokens), good quality
 - Gemini Flash: Very fast, free tier available, Google infrastructure
-- Claude Haiku: Balanced speed/quality, Anthropic quality standards
+- Anthropic Haiku: Balanced speed/quality, Anthropic quality standards
 
 #### **1.2 Reduce Context Size (Token Count)**
 **Impact**: MEDIUM (20-40% faster)
@@ -94,7 +94,7 @@ llm = CrewLLM(
     temperature=temp,
     max_tokens=max_tok,
     api_key=api_key,
-    # Enable caching for Claude/GPT models
+    # Enable caching for Anthropic/GPT models
     extra_headers={
         "HTTP-Referer": "https://backlog-orchestrator.com",
         "X-Title": "Agentic Backlog Orchestrator"
@@ -425,7 +425,7 @@ for i in range(0, len(words), chunk_size):
 - **Total improvement: 70-90%**
 
 ### **Option B: Best Quality/Speed Balance**
-1. ✅ **Use Gemini Flash or Claude Haiku**
+1. ✅ **Use Gemini Flash or Anthropic Haiku**
    ```bash
    OPENROUTER_MODEL=google/gemini-2.0-flash-exp
    ```
@@ -561,10 +561,10 @@ async def chat_with_agent(...):
 |-------|-------|------------|---------|
 | DeepSeek Chat | ⚡⚡⚡ | $0.0001 | ⭐⭐⭐⭐ |
 | Gemini Flash | ⚡⚡⚡ | $0 (free tier) | ⭐⭐⭐⭐ |
-| Claude Haiku | ⚡⚡ | $0.0005 | ⭐⭐⭐⭐⭐ |
+| Anthropic Haiku | ⚡⚡ | $0.0005 | ⭐⭐⭐⭐⭐ |
 | GPT-4o-mini | ⚡ | $0.0006 | ⭐⭐⭐⭐ |
 
-**Recommendation**: Start with DeepSeek for speed/cost, upgrade to Claude Haiku for quality-critical queries.
+**Recommendation**: Start with DeepSeek for speed/cost, upgrade to Anthropic Haiku for quality-critical queries.
 
 ---
 

@@ -1208,6 +1208,37 @@ function App() {
         activeSite={activeSite}
         dashboardData={dashboard}
       />
+
+      {/* Footer */}
+      <Box
+        component="footer"
+        sx={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          py: 0.8,
+          px: 2,
+          backgroundColor: 'rgba(0,0,0,0.75)',
+          backdropFilter: 'blur(4px)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 1200,
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            fontFamily: '"Tw Cen MT", "Tw Cen MT Condensed", Arial, sans-serif',
+            color: 'rgba(255,255,255,0.7)',
+            letterSpacing: '0.5px',
+            fontSize: '0.72rem',
+          }}
+        >
+          Powered by SPT/INSP/MET &nbsp;|&nbsp; Contact: Ataliba Miguel
+        </Typography>
+      </Box>
     </Box>
   );
 }
